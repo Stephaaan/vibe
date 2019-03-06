@@ -2,7 +2,7 @@
     <defs>
         <path id="a" d="M16 0h780c8.837 0 16 7.163 16 16v82c0 8.837-7.163 16-16 16H16c-8.837 0-16-7.163-16-16V16C0 7.163 7.163 0 16 0zm1 1C8.163 1 1 8.163 1 17v80c0 8.837 7.163 16 16 16h778c8.837 0 16-7.163 16-16V17c0-8.837-7.163-16-16-16H17z"/>
     </defs>
-    <g fill="none" fill-rule="evenodd">
+    <g fill="#FF0000" fill-rule="evenodd">
         <mask id="b" fill="#fff">
             <use xlink:href="#a"/>
         </mask>

@@ -120,6 +120,57 @@ body{
 	height: 100%;
 	margin-left: 10px;
 }
+.channel_name_section{
+	line-height: 10px;
+}
+.channel_section_listener_text{
+	color:#502f7e;
+	padding-top: 38px;
+	font-size: 12px;
+}
+.channel_section_listener_handler{
+	display:block;
+}
+.channel_section_numberOfListeners_text{
+	text-align: center;
+	font-size: 21px;
+	color:#502f7e;
+	font-weight: bold;
+}
+.channel_section_name_live{
+	display: inline;
+}
+.channel_section_channel_live_status{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #502f7e;
+	font-size: 12px;
+	display: inline;
+	font-weight: 100;
+}
+.red-dot-8px{
+	background-color: red;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+}
+.dot_16_px{
+	width: 8px;
+	height: 8px;
+	background-color: red;
+	border-radius: 100%;
+}
+.fontLight{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 100;
+}
+.bold{
+	font-weight: bolder;
+}
+.channelName{
+	font-weight: 600;
+	font-size: 24px;
+	color: #502f7e;
+}
 @media only screen and (max-width: 1200px) {
   .pathHomeScreen{
   	right:15%;
@@ -128,6 +179,7 @@ body{
   	right: 15%;
   }
 }
+
 @media only screen and (max-width: 1000px) {
   .pathHomeScreen{
   	right:10%;

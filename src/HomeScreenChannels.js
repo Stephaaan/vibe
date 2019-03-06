@@ -15,8 +15,8 @@ class HomeScreen extends Component{
 					<div className="HomeScreen-stream-line"> </div>
 				</div>
 				<div className="HomeScreen-stream-channelHolder">
-					<Channel/>
-					<Channel/>
+					<Channel liveStatus="OFFLINE SELECTION" time="00:23:45" channelName="Skuska Name" withCorp="Filip C" genre="kaufland kecy"/>
+					<Channel liveStatus="LIVE" time="00:23:45"/>
 					<Channel/>
 				</div>
 			</div>
