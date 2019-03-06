@@ -5,7 +5,7 @@ html{
 body{
 	width: 100%;
 	height:100%;
-
+	background-color: #ebebec;
 	margin:0;
 }
 .App {
@@ -101,9 +101,28 @@ body{
 	margin-top: 16px;
 	
 }
-
+.volume_controller_dot_blue{
+	width: 6px;
+	height: 6px;
+	background-color: #502f7e;
+	border-radius: 100%;
+	margin-right: 2px;
+}
+.red{
+	background-color:#ea3546;
+}
+.disabled{
+	background-color: gray;
+}
+.volume_controller_handler{
+	position: relative;
+	top:8px;
+	display: flex;
+	flex-direction: row;
+}
 .channel_background{
 	/*background:url("imgs/radius-16-px.svg"); */
+	position: relative;
 	background-color: white;
 	border-style: solid;
 	border-radius: 16px;
@@ -113,7 +132,11 @@ body{
 	height: 114px;
 	margin-bottom: 8px;
 	padding: 16px;
-	
+	display: flex;
+}
+.channel{
+	position: relative;
+	left: 271px;
 }
 .channel_section{
 	display: inline-block;
@@ -124,6 +147,10 @@ body{
 	line-height: 10px;
 }
 .channel_section_listener_text{
+	margin-top: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	color:#502f7e;
 	padding-top: 38px;
 	font-size: 12px;
@@ -131,11 +158,18 @@ body{
 .channel_section_listener_handler{
 	display:block;
 }
+.channel_listeners_section{
+	margin-top: 0px;
+	padding-top: 0px;
+	position:absolute;
+	left: 271px;
+}
 .channel_section_numberOfListeners_text{
 	text-align: center;
 	font-size: 21px;
 	color:#502f7e;
 	font-weight: bold;
+	margin-top: 0px;
 }
 .channel_section_name_live{
 	display: inline;
@@ -147,11 +181,41 @@ body{
 	display: inline;
 	font-weight: 100;
 }
+.channel_audio_section{
+	position: absolute;
+	left: 413px;
+	line-height: 4px;
+}
+.channel_audio_audio_source_label{
+	color: #502f7e;
+	font-size: 12px;
+	font-weight: 200;
+}
+.channel_audio_audio_source_value{
+	color: #502f7e;
+	font-size: 12px;
+	font-weight: 900;
+	margin-top: 16px;
+	margin-bottom: 8px;
+}
+.volume_controller_db_label{
+	font-size: 12px;
+	color: #502f7e;
+	margin-left: 4px;
+}
+.channel_audio_volume_handler{
+	position:absolute;
+	top:55px;
+}
 .red-dot-8px{
 	background-color: red;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
+}
+.channel_audio_volume_label{
+	position:relative;
+	top:16px;
 }
 .dot_16_px{
 	width: 8px;
@@ -170,6 +234,44 @@ body{
 	font-weight: 600;
 	font-size: 24px;
 	color: #502f7e;
+}
+.channel_settings_section{
+	position: absolute;
+	left: 626px;
+	display: flex;
+	flex-direction: row;
+
+}
+.channel_settings_editBtn{
+	width: 74px;
+	height: 40px;
+	margin-top: 37px;
+	margin-left: 8px;
+	font-weight: 500;
+	color:#502f7e;
+	border-color:#502f7e;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.channel_settings{
+	background-image: url("imgs/icon-pause.svg");
+	margin-top: 37px;
+	width: 40px;
+	height: 40px;
+}
+.channel_delete{
+	margin-left: 8px;
+	background-image: url("imgs/delete.svg");
+	width: 40px;
+	height: 40px;
+	margin-top: 37px;
+}
+.play{
+	background-image: url("imgs/play.svg");
 }
 @media only screen and (max-width: 1200px) {
   .pathHomeScreen{

@@ -15,9 +15,9 @@ class HomeScreen extends Component{
 					<div className="HomeScreen-stream-line"> </div>
 				</div>
 				<div className="HomeScreen-stream-channelHolder">
-					<Channel liveStatus="OFFLINE SELECTION" time="00:23:45" channelName="Skuska Name" withCorp="Filip C" genre="kaufland kecy"/>
-					<Channel liveStatus="LIVE" time="00:23:45"/>
-					<Channel/>
+					<Channel liveStatus="pending" source="Akai EIE1 input 1 & 2" listeners="12"  time="00:23:45" channelName="Sapyens Night" withCorp="Alyaz" genre="bass, grime, trap"/>
+					<Channel liveStatus="online" source="Akai EIE1 input 3 & 4" listeners="17"  time="00:23:45" channelName="House of Unity" withCorp="Paradiso Rhytm" genre="house & soul"/>
+					<Channel liveStatus="offline" source="Akai EIE1 input 5 & 6" listeners="989"  time="00:23:45" channelName="Liquidity" withCorp="Majkl Kelso" genre="soulfull d&b"/>
 				</div>
 			</div>
 			
