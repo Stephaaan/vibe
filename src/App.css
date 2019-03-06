@@ -113,6 +113,12 @@ body{
 	height: 114px;
 	margin-bottom: 8px;
 	padding: 16px;
+	
+}
+.channel_section{
+	display: inline-block;
+	height: 100%;
+	margin-left: 10px;
 }
 @media only screen and (max-width: 1200px) {
   .pathHomeScreen{
