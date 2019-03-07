@@ -30,7 +30,7 @@ export default store;
                         listeners:number
                         audioSource:String
                         volume:number
-                        stateOfChannel:live/pending/offline
+                        color:blue/red/green/purple
                        }
                 }
                 otherStuff:something

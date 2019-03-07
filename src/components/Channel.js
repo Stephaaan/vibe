@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import dot_16px_red from "../imgs/radius-16-px-red.svg"; 
 import dot_16px_green from "../imgs/radius-16-px-green.svg"; 
 import dot_16px_blue from "../imgs/radius-16-px-blue.svg"; 
+import dot_16px_purple from "../imgs/radius-16-px-purple.svg"; 
 import VolumeController from "./VolumeController";
 
 class Channel extends Component{
@@ -9,16 +10,22 @@ class Channel extends Component{
 		playing:true
 	}
 	render(){
-		const {liveStatus, time, channelName, withCorp, genre, listeners, source} = this.props;
+		const {color, time, channelName, withCorp, genre, listeners, source} = this.props;
 		let icon = null
-		if(liveStatus==="online"){
-			icon = dot_16px_green
-		}else if(liveStatus==="pending"){
-		
-			icon = dot_16px_blue
-		}else{
-			icon = dot_16px_red
-		};
+		switch(color){
+			case "green":
+				icon = dot_16px_green;
+				break;
+			case "blue":
+				icon = dot_16px_blue;
+				break;
+			case "red":
+				icon = dot_16px_red;
+				break;
+			default:
+				icon = dot_16px_purple;
+				break;
+		}; 
 		return (
 				<div className="channel_background">
 					<div className="channel_section channel_name_section">

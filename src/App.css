@@ -6,6 +6,7 @@ body{
 	width: 100%;
 	height:100%;
 	background-color: #ebebec;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	margin:0;
 }
 .App {
@@ -20,9 +21,10 @@ body{
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	font-family: Nunito, sans-serif;
+	font-family: 'Nunito', sans-serif;
 }
 .animated_logo{
+	font-family: 'Nunito', sans-serif;
 	width: 100%;
 	height: 465px;
 	background-image: url("imgs/animated-logo.svg");
@@ -83,7 +85,7 @@ body{
 	color:#502f7e;
 }
 .HomeScreen-stream-live_channel_text{
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-weight: 100;
 	margin-top: 24px;
 	width: 100%;
@@ -131,15 +133,15 @@ body{
 	flex-direction: row;
 }
 .channel_background{
-	/*background:url("imgs/radius-16-px.svg"); */
+	
 	position: relative;
 	background-color: white;
 	border-style: solid;
 	border-radius: 16px;
 	border-color: #502f7e;
 	border-width: 1px;
-	width:812px;
-	height: 114px;
+	width:60%;
+	height: 10%;
 	margin-bottom: 8px;
 	padding: 16px;
 	display: flex;
@@ -151,6 +153,7 @@ body{
 .channel_section{
 	display: inline-block;
 	height: 100%;
+	width:25%;
 	margin-left: 10px;
 }
 .channel_name_section{
@@ -171,8 +174,8 @@ body{
 .channel_listeners_section{
 	margin-top: 0px;
 	padding-top: 0px;
-	position:absolute;
-	left: 271px;
+	/*position:absolute;
+	left: 271px; */
 }
 .channel_section_numberOfListeners_text{
 	text-align: center;
@@ -192,8 +195,8 @@ body{
 	font-weight: 100;
 }
 .channel_audio_section{
-	position: absolute;
-	left: 413px;
+/*	position: absolute;
+	left: 413px; */
 	line-height: 4px;
 }
 .channel_audio_audio_source_label{
@@ -243,18 +246,18 @@ body{
 }
 .channelName{
 	font-weight: 600;
-	font-size: 24px;
+	font-size: 1.3em;
 	color: #502f7e;
 }
 .channel_settings_section{
-	position: absolute;
-	left: 626px;
+	/*position: absolute;
+	left: 626px; */
 	display: flex;
 	flex-direction: row;
 
 }
 .channel_settings_editBtn{
-	width: 74px;
+	width: 40%;
 	height: 40px;
 	margin-top: 37px;
 	margin-left: 8px;
@@ -290,7 +293,7 @@ body{
 	font-weight: 100;
 }
 .edit_channel_screen_edit_channel{
-	width: 976px;
+	width: 70%;
 	height: 1096px;
 	background-color:white;
 	margin-top: 120px;
@@ -302,42 +305,43 @@ body{
 .edit_channel_edit_form{
 	width: 50%;
 	height:100%;
-	position: relative;
+	text-align: left;
+	margin-left: 48px;
 }
 .edit_channel_preview{
 	width: 50%;
 	height:100%;
+	text-align: left;
 	
 }
 .edit_channel_new_channel_p{
 	font-size: 21px;
-	position: absolute;
-	top: 48px;
-	left: 48px;
+	
+	margin-top: 48px;
 }
 .edit_channel_line{
 	width: 48px;
  	height: 2px;
 	background-color: #502f7e;
-	position: absolute;
-	top: 108px;
-	left: 48px;
+	margin-top: 60px;
 }
 .edit_channel_radioButtons{
 	width: 100%;
 	height: 100px;
-	position: absolute;
-	left: 56px;
-	top: 130px;
-	
+	margin-top: 20px;
 }
 .top{
 	margin-top: 0px;
+}
+.radiobutton_text{
+	margin-top: 23px;
+	font-size: 21px;
 }
 .center{
 	display:flex;
 	justify-content: center;
 }
+
 .radiobutton_outer{
 	margin-top: 10px;
 	margin-right: 10px;
@@ -361,16 +365,154 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 }
+.new_channel_text_input{
+  width: 80%;
+  height: 40px;
+  font-size: 1.2em;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.83;
+  letter-spacing: normal;
+  color: #acacaf;
+  margin-top: 20px;
+}
+.edit_channel_channel_name_tag{
+	font-weight: 500;
+	margin-top: 20px;
+	font-size: 0.6em;
+}
+.edit_channel_channel_name_warning{
+	font-size: 12px;
 
-@media only screen and (max-width: 1200px) {
-  .pathHomeScreen{
-  	right:15%;
-  }
-  .btnAddChannel{
-  	right: 15%;
-  }
+}
+.edit_channel_channel_dj_warning{
+	margin-top: 20px;
+	font-size: 12px;
+}
+.new_channel_name{
+	
+}
+.new_channel_dj{
+	margin-top: 0px;
+}
+.edit_channel_channel_dj_tag{
+	font-weight: 500;
+	margin-top: 40px;
+	font-size: 0.6em;
+}
+.new_channel_genre{
+	margin-top: 0px;
+}
+.edit_channel_channel_genre_tag{
+	margin-top: 40px;
+	font-size: 0.6em;
+	font-weight: 500;
+}
+.edit_channel_channel_genre_warning{
+	font-size: 12px;
+	margin-top: 20px;
+}
+.edit_channel_handler{
+	width: 100%;
+	height: 100%;
+	padding-top: 25%;
+}
+.edit_channel_preview_text{
+	font-weight: 400;
+	font-size: 0.5em;
+	margin-left: 2%;
+}
+.edit_channel_cover_file{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.8em;
+	background-color: #ea3546;
+	color: aliceblue;
+	margin-top: 10px;
+	width:40%;
+	height: 50px;
+	border-radius: 16px;
+}
+.edit_channel_channel_file_tag{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 1vmax;
+	font-weight: 500;
+	margin-top: 40px;
+}
+.inputfile{
+	display:none;
+}
+.color_chooser_handler{
+	margin-top: 30px;
+	display:flex;
+
+}
+.color_chooser{
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.color_chooser_blue{
+	background-color:#4a90e2;
+}
+.color_chooser_red{
+	background-color:#ea3546;
+}
+.color_chooser_green{
+	background-color:#29d321;
+}
+.color_chooser_purple{
+	background-color:#bd10e0;
 }
 
+.color_chooser_whitebox{
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	border: solid 3px white;
+}
+.color_chooser_active{
+	background-color: white;
+}
+.edit_channel_format_warning{
+	font-weight: 500;
+	margin-top: 15px;
+	font-size: 12px;
+}
+.edit_channel_color{
+	font-size: 1vmax;
+	font-weight: 500;
+	margin-top: 40px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.color_chooser_block{
+	display: block;
+	flex-wrap: wrap;
+	font-weight: 600;
+	font-size: 14px;
+}
+.skuska{
+	width: 40px;
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+.file_delete{
+	margin-left: 5px;
+	background: url("imgs/icons8-delete.svg");
+	background-size: 15px;
+	height: 60%;
+	width: 10%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 @media only screen and (max-width: 1000px) {
   .pathHomeScreen{
   	right:10%;
@@ -379,3 +521,13 @@ body{
   	right: 10%;
   }
 }
+/*not working*/
+/*
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+	html {
+	   -webkit-transform: scale(1.2);
+	   -moz-transform: scale(1.2);
+	   transform: scale(1.2);
+	}
+ }
+*/

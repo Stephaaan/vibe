@@ -5,7 +5,7 @@ const RadioButton = props => {
         <div onClick={()=>handleClick()}className="radiobutton_outer">
             {checked?<div className="radiobutton_inner"></div>:""}
         </div>
-        <p>{text}</p>
+        <p className="radiobutton_text">{text}</p>
         </div>
     );
 

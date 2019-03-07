@@ -28,7 +28,7 @@ class RadioButtonHandler extends Component{
     render(){
         return (
             <div>
-                {this.state.buttons.map(item => <RadioButton id={item.id} handleClick={()=>{this.handleCheck(item.id)}}checked={item.checked} text={item.text}/>)}
+                {this.state.buttons.map(item => <RadioButton key={item.id} id={item.id} handleClick={()=>{this.handleCheck(item.id)}}checked={item.checked} text={item.text}/>)}
             </div>
         );
     }
