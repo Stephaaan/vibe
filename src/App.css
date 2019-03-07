@@ -293,26 +293,27 @@ body{
 	font-weight: 100;
 }
 .edit_channel_screen_edit_channel{
-	width: 70%;
-	height: 1096px;
+	width: 80%;
+	height: 1200px;
 	background-color:white;
 	margin-top: 120px;
 	border: 1px solid #502f7e;
 	border-radius: 20px;
 	display: flex;
+	flex-wrap: wrap;
 	position:relative;
 }
 .edit_channel_edit_form{
-	width: 50%;
+	width: 45%;
 	height:100%;
 	text-align: left;
 	margin-left: 48px;
 }
 .edit_channel_preview{
-	width: 50%;
+	width: 46%;
 	height:100%;
 	text-align: left;
-	
+	float: left;
 }
 .edit_channel_new_channel_p{
 	font-size: 21px;
@@ -415,7 +416,6 @@ body{
 }
 .edit_channel_handler{
 	width: 100%;
-	height: 100%;
 	padding-top: 25%;
 }
 .edit_channel_preview_text{
@@ -491,18 +491,25 @@ body{
 	margin-top: 40px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+.edit_channel_volume_control{
+	margin-top: 30px;
+	font-size:12px;
+}
 .color_chooser_block{
 	display: block;
 	flex-wrap: wrap;
 	font-weight: 600;
 	font-size: 14px;
 }
-.skuska{
+.color_chooser_color_tag{
 	width: 40px;
 	margin-top: 10px;
 	display: flex;
 	justify-content: center;
+}
+
+.block{
+	display:block;
 }
 .file_delete{
 	margin-left: 5px;
@@ -512,6 +519,56 @@ body{
 	width: 10%;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.edit_channel_source_select{
+	margin-top: 20px;
+	width: 70%;
+	height: 50px;
+	background-color: white;
+	border: 1px solid #502f7e;
+	border-radius: 5px;
+	-webkit-appearance: none;
+  	-moz-appearance: none;
+  	appearance: none;
+	background: url(imgs/down.svg) 96% / 10% no-repeat #eee;
+	padding-left: 10px;
+	font-size: 18px;
+	color:#502f7e;
+}
+.skuska{
+	margin-top: -100px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.linkWidth{
+	width: 30%;
+	margin-right:10px;
+}
+.backButton{
+	color:#ea3546;
+	font-size:16px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1px;
+	width: 100%;
+	height:40px;
+	border: 1px solid #ea3546;
+	border-radius: 18px;
+	text-align: right;
+}
+.saveButton{
+	margin-left: 10px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 40px;
+	color:white;
+	font-size: 16px;
+	border-radius: 18px;
+	background-color: #ea3546;
 }
 @media only screen and (max-width: 1000px) {
   .pathHomeScreen{

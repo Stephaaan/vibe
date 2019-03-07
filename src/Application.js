@@ -9,7 +9,7 @@ class Application extends Component{
             <Router>
                 <HomeScreen path="/"/>
                 <HomeScreenChannels path="/channels"/>
-                <NewChannel path="/createChannel"/>
+                <NewChannel addChannel={this.props.addChannel} path="/createChannel"/>
             </Router>
         );
     }

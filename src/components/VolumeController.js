@@ -14,12 +14,17 @@ class VolumeController extends Component{
     getClassName(limit){
         return "volume_controller_dot_blue " + ((limit > 10)?"red ":"")+(this.getVolume() < limit?"disabled":"");
     }
+    setVolume(volume){
+        this.setState({controller:{volume:15}});
+        this.props.setVolume(volume);
+    }
     render(){
+
         var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
         return(
             
             <div className="volume_controller_handler">
-                {array.map(i=><div key={i}className="volume_controller_dot_clickable" onClick={() => this.setState({controller:{volume:i}})}><div key={i} className={this.getClassName(i)}></div></div>)}
+                {array.map(i=><div key={i}className="volume_controller_dot_clickable" onClick={() => this.setVolume(i)}><div key={i} className={this.getClassName(i)}></div></div>)}
                 
                     <div className="volume_controller_db_label">{this.state.controller.volume - 10}dB</div>
             </div>
