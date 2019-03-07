@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import dot_16px_red from "./imgs/radius-16-px-red.svg"; 
-import dot_16px_green from "./imgs/radius-16-px-green.svg"; 
-import dot_16px_blue from "./imgs/radius-16-px-blue.svg"; 
+import dot_16px_red from "../imgs/radius-16-px-red.svg"; 
+import dot_16px_green from "../imgs/radius-16-px-green.svg"; 
+import dot_16px_blue from "../imgs/radius-16-px-blue.svg"; 
 import VolumeController from "./VolumeController";
 
 class Channel extends Component{
@@ -9,7 +9,7 @@ class Channel extends Component{
 		playing:true
 	}
 	render(){
-		const {liveStatus, time, channelName, withCorp, genre, listeners, source, isPlaying} = this.props;
+		const {liveStatus, time, channelName, withCorp, genre, listeners, source} = this.props;
 		let icon = null
 		if(liveStatus==="online"){
 			icon = dot_16px_green
@@ -23,11 +23,11 @@ class Channel extends Component{
 				<div className="channel_background">
 					<div className="channel_section channel_name_section">
 						<div className="channel_section_channel_live_status ">
-							<img className="dot_16_px" src={icon}/> <span className="light">LIVE</span> <span className="bold">{time}</span>
+							<img alt="" className="dot_16_px" src={icon}/> <span className="light">LIVE</span> <span className="bold">{time}</span>
 							</div>
 							<p className="channelName">{channelName}</p>
 							<p className="channelName">w/ {withCorp}</p>
-							<p className="fontLight">{genre}</p>
+							<p className="channel_genre">{genre}</p>
 					</div>
 					<div className="channel_section channel_listeners_section">
 						<div className="channel_section_listener_handler">

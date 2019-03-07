@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
-import "./App.css";
-import path from "./imgs/path-2.svg"
+import "../App.css";
+
 
 import Channel from "./Channel";
 class HomeScreen extends Component{
@@ -18,6 +18,7 @@ class HomeScreen extends Component{
 					<Channel liveStatus="pending" source="Akai EIE1 input 1 & 2" listeners="12"  time="00:23:45" channelName="Sapyens Night" withCorp="Alyaz" genre="bass, grime, trap"/>
 					<Channel liveStatus="online" source="Akai EIE1 input 3 & 4" listeners="17"  time="00:23:45" channelName="House of Unity" withCorp="Paradiso Rhytm" genre="house & soul"/>
 					<Channel liveStatus="offline" source="Akai EIE1 input 5 & 6" listeners="989"  time="00:23:45" channelName="Liquidity" withCorp="Majkl Kelso" genre="soulfull d&b"/>
+					<Channel liveStatus="online" source="Akai EIE1 input 7 & 8" listeners="všetci"  time="10:00:01" channelName="Panteri" withCorp="Garda Mauzer" genre="srpska propaganda"/>
 				</div>
 			</div>
 			

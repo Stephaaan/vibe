@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 class VolumeController extends Component{
     state = {
@@ -20,8 +19,9 @@ class VolumeController extends Component{
         return(
             
             <div className="volume_controller_handler">
-                {array.map(i=><div key={i} className={this.getClassName(i)} onClick={() => this.setState({controller:{volume:i}})}></div>)}
-                <div className="volume_controller_db_label">{this.state.controller.volume - 10}dB</div>
+                {array.map(i=><div key={i+"clickable"}className="volume_controller_dot_clickable" onClick={() => this.setState({controller:{volume:i}})}><div key={i} className={this.getClassName(i)}></div></div>)}
+                
+                    <div className="volume_controller_db_label">{this.state.controller.volume - 10}dB</div>
             </div>
             
         );

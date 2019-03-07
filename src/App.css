@@ -24,16 +24,18 @@ body{
 }
 .animated_logo{
 	width: 100%;
-	height: 100%;
+	height: 465px;
 	background-image: url("imgs/animated-logo.svg");
 	background-repeat: no-repeat;
 	background-position: center;
 	text-align: center;
 	font-size: 24px;
 	line-height: 0px;
+	margin-top: 20px;
 	color: #502f7e
 }
 .no_active_channels_p{
+	height: 30px;
 	margin-top: 136px;
 }
 .create_vibe_p{
@@ -58,7 +60,8 @@ body{
 }
 .pathHomeScreen{
 	position:absolute;
-	right:20%;
+	right:21%;
+	top:200px;
 }
 
 .HomeScreen-stream-topLogo{
@@ -80,6 +83,8 @@ body{
 	color:#502f7e;
 }
 .HomeScreen-stream-live_channel_text{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 100;
 	margin-top: 24px;
 	width: 100%;
 	display: flex;
@@ -106,7 +111,12 @@ body{
 	height: 6px;
 	background-color: #502f7e;
 	border-radius: 100%;
-	margin-right: 2px;
+}
+.volume_controller_dot_clickable{
+	width: 8px;
+	height: 6px;
+	display: flex;
+	justify-content: center;
 }
 .red{
 	background-color:#ea3546;
@@ -228,6 +238,7 @@ body{
 	font-weight: 100;
 }
 .bold{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-weight: bolder;
 }
 .channelName{
@@ -273,6 +284,84 @@ body{
 .play{
 	background-image: url("imgs/play.svg");
 }
+.channel_genre{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	font-weight: 100;
+}
+.edit_channel_screen_edit_channel{
+	width: 976px;
+	height: 1096px;
+	background-color:white;
+	margin-top: 120px;
+	border: 1px solid #502f7e;
+	border-radius: 20px;
+	display: flex;
+	position:relative;
+}
+.edit_channel_edit_form{
+	width: 50%;
+	height:100%;
+	position: relative;
+}
+.edit_channel_preview{
+	width: 50%;
+	height:100%;
+	
+}
+.edit_channel_new_channel_p{
+	font-size: 21px;
+	position: absolute;
+	top: 48px;
+	left: 48px;
+}
+.edit_channel_line{
+	width: 48px;
+ 	height: 2px;
+	background-color: #502f7e;
+	position: absolute;
+	top: 108px;
+	left: 48px;
+}
+.edit_channel_radioButtons{
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	left: 56px;
+	top: 130px;
+	
+}
+.top{
+	margin-top: 0px;
+}
+.center{
+	display:flex;
+	justify-content: center;
+}
+.radiobutton_outer{
+	margin-top: 10px;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: rgba(255, 0, 0, 0);
+	border: 4px solid #502f7e;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.radiobutton_inner{
+	width: 16px;
+	height: 16px;
+	background-color: #502f7e;
+	border-radius: 50%;
+}
+.radio_button_handler{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 1200px) {
   .pathHomeScreen{
   	right:15%;
