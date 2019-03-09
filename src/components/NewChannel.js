@@ -2,13 +2,22 @@ import React, {Component} from "react";
 import RadioButtonHandler from "./RadioButtonHandler";
 import ColorChooser from "./ColorChooser";
 import VolumeController from "./VolumeController";
-import { Link } from "@reach/router"
+import { Link, navigate} from "@reach/router"
+//TODO: simplify... 
+//TODO: prerobit -> 
+/* 
+    tento komponent -> 
+        vybratie online/offline channelu
+        + zobrazenie komponentu -> onlinechannelform/offlinechannelform... -> tie komponenty by posielali data automaticky sem a ostatok by bol ako je teraz
+
+*/
 class NewChannel extends Component{
     state = {
         name:"",
         checked:2,
         fileName:"Choose a file",
-        colorPicked:1
+        colorPicked:1,
+        volume:15
     }
     handleFileUpload(fileName){
         let prepared = "";
@@ -28,20 +37,53 @@ class NewChannel extends Component{
     }
     createChannel(){
         if(this.state.name === undefined || this.state.name === ""){
+            console.log("name");
             return;
         }
         if(this.state.dj === undefined || this.state.dj === ""){
+            console.log("dj");
             return;
         }
         if(this.state.genre === undefined || this.state.genre === ""){
+            console.log("genre");
             return;
         }
         if(this.state.fileName === "Choose a file"){
+            console.log("file");
             return;
         }
-        console.log("-------------");
-        console.log(this.state);
-        console.log("-------------");
+        if(!this.state.source){
+            console.log("source");
+            return;
+        }
+        let colorToText="";
+        switch(this.state.colorPicked){
+            case 1:
+                colorToText="blue";
+                break;
+            case 2:
+                colorToText="red";
+                break;
+            case 3:
+                colorToText="green";
+                break;
+            default:
+                colorToText="purple";
+                break;
+        }
+
+        this.props.addChannel({
+            name:this.state.name,
+            type:this.statechecked===1?"live":"offline",
+            author:this.state.dj,
+            timePlaying:"00:00:00",
+            listeners:"0",
+            audioSource:this.state.source,
+            volume:this.state.volume,
+            color:colorToText,
+            genre:this.state.genre
+        });
+        navigate("/");
     }
     render(){
         return (
@@ -78,13 +120,13 @@ class NewChannel extends Component{
                                 <div className="edit_channel_color">Channel color theme</div>
                                 <ColorChooser choose={id => this.handleColorChoose(id)}/>
                                 <div className="edit_channel_color">Audio source*</div>
-                                <select onChange={e => this.setState({source:e.target.value})} className="edit_channel_source_select">
+                                <select onChange={e=>this.setState({source:e.target.value})} className="edit_channel_source_select">
                                     <option>skuska</option>
                                     <option>skuska2</option>
                                 </select>
                                 <div className="edit_channel_volume_control">
                                     <div>Channel volume</div>
-                                    <VolumeController setVolume={(volume) => this.setState({volume})}/>
+                                    <VolumeController volume={this.state.volume} setVolume={(volume) => this.setState({volume})}/>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +137,7 @@ class NewChannel extends Component{
                             </div>
                         </div>
                         <div className="skuska">
-                            <Link className="linkWidth" to="/channels"><div className="backButton">
+                            <Link className="linkWidth" to="/"><div className="backButton">
                                 Back
                             </div></Link>
                             <div className="saveButton" onClick={()=>{this.createChannel()}}>

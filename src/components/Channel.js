@@ -7,7 +7,14 @@ import VolumeController from "./VolumeController";
 
 class Channel extends Component{
 	state = {
-		playing:true
+		playing:true,
+		volume:15
+	}
+	componentDidMount(){
+		this.setState({volume:this.props.volume});
+	}
+	setVolume(value){
+		this.setState({volume:value});
 	}
 	render(){
 		const {color, time, channelName, withCorp, genre, listeners, source} = this.props;
@@ -47,13 +54,16 @@ class Channel extends Component{
 						<p className="channel_audio_audio_source_value">{source}</p>
 						<div className="channel_audio_volume_handler">
 							<p className="channel_audio_volume_label">Channel Volume</p> <br/>
-							<VolumeController/>
+							<VolumeController volume={this.state.volume} setVolume={value => this.setVolume(value)}/>
 						</div>
 					</div>
 					<div className="channel_section channel_settings_section">
 						<div className={`channel_settings ${this.state.playing?" play":""}`} onClick={()=>this.setState({playing:!this.state.playing})}> </div>
 						<div className="channel_settings_editBtn">Edit</div>
-						<div className="channel_delete"></div>
+						<div className="channel_delete" onClick={() => {
+							console.log("aaaa");
+							this.props.removeChannel()
+						}}></div>
 					</div>
 				</div>
 			);

@@ -6,6 +6,7 @@ import "../App.css";
 import Channel from "./Channel";
 class HomeScreen extends Component{
 	render(){
+		const {channels} = this.props;
 		return <div className="HomeScreen-noStreams">
 			<div className="HomeScreen-stream-topLogo">
 				<div className="topContainer">
@@ -15,10 +16,15 @@ class HomeScreen extends Component{
 					<div className="HomeScreen-stream-line"> </div>
 				</div>
 				<div className="HomeScreen-stream-channelHolder">
-					<Channel color="blue" source="Akai EIE1 input 1 & 2" listeners="12"  time="00:23:45" channelName="Sapyens Night" withCorp="Alyaz" genre="bass, grime, trap"/>
-					<Channel color="red" source="Akai EIE1 input 3 & 4" listeners="17"  time="00:23:45" channelName="House of Unity" withCorp="Paradiso Rhytm" genre="house & soul"/>
-					<Channel color="green" source="Akai EIE1 input 5 & 6" listeners="989"  time="00:23:45" channelName="Liquidity" withCorp="Majkl Kelso" genre="soulfull d&b"/>
-					<Channel color="purple" source="Akai EIE1 input 7 & 8" listeners="všetci"  time="10:00:01" channelName="Panteri" withCorp="Garda Mauzer" genre="srpska propaganda"/>
+					{
+						Object.keys(channels).map(index =>  {
+							const {name, type, author, timePlaying, listeners, audioSource, volume, color, genre} = channels[index];
+							//TODO: podla type rozhodnut ci zobrazit channel alebo offline channel
+							//TODO: -> pridat prop volume do channel -> done
+							//TODO: -> vytvorit component offline channel
+							return <Channel removeChannel={() => this.props.removeChannel(index)} volume={volume} key={index} color={color} source={audioSource} listeners={listeners} time={timePlaying} channelName={name} withCorp={author} genre={genre} />
+						})
+					}
 				</div>
 			</div>
 			
