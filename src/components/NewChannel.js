@@ -11,6 +11,8 @@ import { Link, navigate} from "@reach/router"
         + zobrazenie komponentu -> onlinechannelform/offlinechannelform... -> tie komponenty by posielali data automaticky sem a ostatok by bol ako je teraz
 
 */
+//cely system s file je retardovany
+
 class NewChannel extends Component{
     state = {
         name:"",
