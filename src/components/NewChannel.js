@@ -3,6 +3,7 @@ import RadioButtonHandler from "./RadioButtonHandler";
 import ColorChooser from "./ColorChooser";
 import VolumeController from "./VolumeController";
 import { Link, navigate} from "@reach/router"
+import Modal from 'react-modal';
 //TODO: simplify... 
 //TODO: prerobit -> 
 /* 
@@ -12,6 +13,14 @@ import { Link, navigate} from "@reach/router"
 
 */
 //cely system s file je retardovany
+const customStyles = {
+    content : {
+      width:"500px",
+      height:"500px",
+      margin:"auto"
+    }
+  };
+  Modal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,0.5)';
 
 class NewChannel extends Component{
     state = {
@@ -19,7 +28,8 @@ class NewChannel extends Component{
         checked:2,
         fileName:"Choose a file",
         colorPicked:1,
-        volume:15
+        volume:15,
+        modalIsOpen:false
     }
     handleFileUpload(fileName){
         let prepared = "";
@@ -90,8 +100,12 @@ class NewChannel extends Component{
     render(){
         return (
             <div className="animated_logo top center">
-                 &nbsp;
-                
+                <Modal
+                   
+                    isOpen={this.state.modalIsOpen}
+                    contentLabel="Example Modal"
+                    style={customStyles}
+                    ></Modal>    
                     <div className="edit_channel_screen_edit_channel">
                         {/*edit channel div*/}
                         <div className="edit_channel_edit_form">

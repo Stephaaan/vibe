@@ -29,7 +29,6 @@ body{
 	font-family: 'Nunito', sans-serif;
 }
 .animated_logo{
-
 	font-family: 'Nunito', sans-serif; 
 	width: 100%;
 	height: 465px;
@@ -583,6 +582,28 @@ body{
 	border-radius: 18px;
 	background-color: #ea3546;
 }
+.modal_delete_channel{
+	width: 40%;
+	height: 50%;
+	margin: auto;
+	border: 1px solid #502f7e;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: collumn;
+}
+.modal_delete_channel > * {
+/*	flex: 1 1 100%; */
+} 
+.modal_delete_channel_question{
+	
+	margin-top: 10px auto;
+	color: #502f7e;
+	font-family: 'Nunito';
+	font-size: 2em;
+}
+
 @media only screen and (max-width: 1000px) {
   .btnAddChannel{
   	right: 10%;

@@ -4,11 +4,22 @@ import dot_16px_green from "../imgs/radius-16-px-green.svg";
 import dot_16px_blue from "../imgs/radius-16-px-blue.svg"; 
 import dot_16px_purple from "../imgs/radius-16-px-purple.svg"; 
 import VolumeController from "./VolumeController";
+import Modal from 'react-modal';
+
+const customStyles = {
+    content : {
+     
+    }
+  };
+  Modal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,0.6)';
+
+
 
 class Channel extends Component{
 	state = {
 		playing:true,
-		volume:15
+		volume:15,
+		isModalOpened:false
 	}
 	componentDidMount(){
 		this.setState({volume:this.props.volume});
@@ -35,6 +46,14 @@ class Channel extends Component{
 		}; 
 		return (
 				<div className="channel_background">
+					<Modal
+						className="modal_delete_channel"
+				   		isOpen={this.state.isModalOpened}
+				   		contentLabel="Delete channel"
+				   		>
+							<div className="modal_delete_channel_question">Delete channel?</div><br/>
+							<div className="modal_delete_channel_question">'{channelName}'</div>
+				   </Modal>    
 					<div className="channel_section channel_name_section">
 						<div className="channel_section_channel_live_status ">
 							<img alt="" className="dot_16_px" src={icon}/> <span className="light">LIVE</span> <span className="bold">{time}</span>
@@ -61,8 +80,7 @@ class Channel extends Component{
 						<div className={`channel_settings ${this.state.playing?" play":""}`} onClick={()=>this.setState({playing:!this.state.playing})}> </div>
 						<div className="channel_settings_editBtn">Edit</div>
 						<div className="channel_delete" onClick={() => {
-							console.log("aaaa");
-							this.props.removeChannel()
+							this.setState({isModalOpened:true})
 						}}></div>
 					</div>
 				</div>
