@@ -18,7 +18,7 @@ class HomeScreen extends Component{
 				<div className="HomeScreen-stream-channelHolder">
 					{
 						Object.keys(channels).map(index =>  {
-							const {name, type, author, timePlaying, listeners, audioSource, volume, color, genre} = channels[index];
+							const {name, /*type,*/ author, timePlaying, listeners, audioSource, volume, color, genre} = channels[index];
 							//TODO: podla type rozhodnut ci zobrazit channel alebo offline channel
 							//TODO: -> pridat prop volume do channel -> done
 							//TODO: -> vytvorit component offline channel
@@ -32,3 +32,11 @@ class HomeScreen extends Component{
 	}
 }
 export default HomeScreen;
+
+/* 
+	-> nejak rozumnejsie pomenovat files
+	-> dokoncit to s tymi offline channels -> k tomu by asi bolo dobre pristupovat trochu inak
+	-> vytvorit novy state a reducer na offline channels.... lenze to by bolo mozno prilis vela duplikovaneho kodu v tom reduceri
+	-> alebo to urobit podla povodneho planu -> offline channel by mal nejaku flag ze je offline
+	-> a v renderi by sa najprv vyfiltrovali online a potom offline channely 
+*/

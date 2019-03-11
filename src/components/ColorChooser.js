@@ -40,3 +40,8 @@ class ColorChooser extends Component{
     }
 }
 export default ColorChooser;
+
+/* 
+    -> mozno ze to prerobit tak aby sa cez props dal nastavit pocet a farba tych chooserov...
+    -> zbytocne to ma state ked sa aj tak posiela parentovi a pri renderi ten state moze poslat sem len ako hodnotu
+*/

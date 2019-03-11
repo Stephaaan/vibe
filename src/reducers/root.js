@@ -4,3 +4,8 @@ import channels from "./channels"
 const root = combineReducers({channels});
 
 export default root;
+
+
+/* 
+    OK
+*/

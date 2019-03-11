@@ -4,15 +4,7 @@ import ColorChooser from "./ColorChooser";
 import VolumeController from "./VolumeController";
 import { Link, navigate} from "@reach/router"
 import Modal from 'react-modal';
-//TODO: simplify... 
-//TODO: prerobit -> 
-/* 
-    tento komponent -> 
-        vybratie online/offline channelu
-        + zobrazenie komponentu -> onlinechannelform/offlinechannelform... -> tie komponenty by posielali data automaticky sem a ostatok by bol ako je teraz
 
-*/
-//cely system s file je retardovany
 const customStyles = {
     content : {
       width:"500px",
@@ -166,4 +158,12 @@ class NewChannel extends Component{
     }  
 }
 export default NewChannel;
-//24px;
+/* 
+    //TODO: simplify... 
+    //TODO: prerobit ->  
+    tento komponent -> 
+        vybratie online/offline channelu
+        + zobrazenie komponentu -> onlinechannelform/offlinechannelform... -> tie komponenty by posielali data automaticky sem a ostatok by bol ako je teraz
+
+    //cely system s file je retardovany
+*/

@@ -25,3 +25,8 @@ const channels = (state = {}, action) => {
     }
 }
 export default channels;
+
+/*
+    OK
+    -> dokoncit ostatne actions
+*/

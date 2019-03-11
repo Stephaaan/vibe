@@ -5,3 +5,7 @@ export const SET_VOLUME = "SET_VOLUME";
 export const SET_PLAYING = "SET_PLAYING";
 export const SET_STATE_OF_CHANNEL = "SET_STATE_OF_CHANNEL";
 export const SET_LISTENERS = "SET_LISTENERS"
+
+/* 
+    OK
+*/

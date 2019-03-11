@@ -5,14 +5,38 @@ import dot_16px_blue from "../imgs/radius-16-px-blue.svg";
 import dot_16px_purple from "../imgs/radius-16-px-purple.svg"; 
 import VolumeController from "./VolumeController";
 import Modal from 'react-modal';
+import styled, { keyframes } from "styled-components";
 
 const customStyles = {
     content : {
-     
-    }
+      width:"40%",
+      height:"50%",
+	  margin:"auto",
+	  border: "1px solid #502f7e",
+	  borderRadius:"15px",
+	  display:"flex",
+	  justifyContent:"center",
+	  flexWrap:"wrap",
+	  flexDirection:"collumn"
+	}, 
+	overlay : {
+		backgroundColor: 'rgba(0,0,0,0.6)',
+		animation: "${animation}",
+		animationDuration: "1s"
+	}
   };
-  Modal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,0.6)';
+  const animation = keyframes`
+  from {
+   backgroundColor:rgba(0,0,0,1);
+  }
 
+  to {
+    backgroundColor:rgba(0,0,0,0.6);
+  }
+`;
+  /*
+  Modal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,0.6)';
+*/
 
 
 class Channel extends Component{
@@ -47,12 +71,18 @@ class Channel extends Component{
 		return (
 				<div className="channel_background">
 					<Modal
-						className="modal_delete_channel"
 				   		isOpen={this.state.isModalOpened}
 				   		contentLabel="Delete channel"
-				   		>
-							<div className="modal_delete_channel_question">Delete channel?</div><br/>
-							<div className="modal_delete_channel_question">'{channelName}'</div>
+				   		style={customStyles}>
+						<div className="modal_delete_channel_question">Delete channel?</div><br/>
+						<div className="modal_delete_channel_question modal_delete_channel_name ">'{channelName}'</div>
+						<div className="edit_channel_line">
+                                &nbsp;
+                            </div>
+						<div className="modal_delete_channel_warning">
+						If you delete channel user will be redirected to another active channel automatically.
+						</div>
+						<div className="modal_delete_button_holder"><button className="modal_delete_back" onClick={() => this.setState({isModalOpened:false})}>Back</button><button className="modal_delete_confirm"  onClick={()=>this.props.removeChannel(this.props.key)}>Delete</button></div>
 				   </Modal>    
 					<div className="channel_section channel_name_section">
 						<div className="channel_section_channel_live_status ">
@@ -88,3 +118,9 @@ class Channel extends Component{
 	}
 }
 export default Channel;
+
+
+/*
+	-> prilis vela veci -> skusit to zjednodusit
+	-> mozno vyhodit ten modal do niecoho samostatneho a urobit ho reusable? 
+*/

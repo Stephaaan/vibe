@@ -7,7 +7,9 @@ const store = createStore(root,
 );
 
 export default store;
-
+/*
+    OK
+ */
 
 
 
