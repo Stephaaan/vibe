@@ -600,15 +600,17 @@ body{
 	text-align: center;
 	font-family: 'Open Sans';
 	color: #502f7e;
-	font-size: 1em;
+	font-size: 0.8em;
 	font-weight: 300;
+	margin-bottom: 48px;
 }
 .modal_delete_channel_question{
 	height: 50px;
-	margin-top: 10px auto;
+	margin-top: 25px auto;
 	color: #502f7e;
 	font-family: 'Nunito';
-	font-size: 2em;
+	font-size: 1.5em;
+	font-weight: 600;
 	width: 100%;
 	text-align: center;
 }
@@ -623,6 +625,15 @@ body{
 
 	font-weight: 500;
 	font-size: 1em;
+}
+.modal_delete_channel_line{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.modal_delete_line_holder{
+	flex: 1 1 100%;
+	display: flex;
+	justify-content: center;
 }
 .modal_delete_confirm{
 	height: 50px;
@@ -643,6 +654,14 @@ body{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
+	margin-bottom: 32px;
+}
+.modal_delete_channel_holder{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	flex-wrap: wrap;
+	flex-direction:collumn;
 }
 
 .Modal_Overlay_anim{

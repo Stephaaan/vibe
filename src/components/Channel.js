@@ -9,15 +9,14 @@ import styled, { keyframes } from "styled-components";
 
 const customStyles = {
     content : {
-      width:"40%",
-      height:"50%",
+	  width:"30%",
+	  height:"320px",
 	  margin:"auto",
 	  border: "1px solid #502f7e",
 	  borderRadius:"15px",
+	  marginTop:"20px",
 	  display:"flex",
-	  justifyContent:"center",
-	  flexWrap:"wrap",
-	  flexDirection:"collumn"
+	  alignItems:"flex-end"
 	}, 
 	overlay : {
 		backgroundColor: 'rgba(0,0,0,0.6)',
@@ -74,15 +73,19 @@ class Channel extends Component{
 				   		isOpen={this.state.isModalOpened}
 				   		contentLabel="Delete channel"
 				   		style={customStyles}>
-						<div className="modal_delete_channel_question">Delete channel?</div><br/>
-						<div className="modal_delete_channel_question modal_delete_channel_name ">'{channelName}'</div>
-						<div className="edit_channel_line">
-                                &nbsp;
-                            </div>
-						<div className="modal_delete_channel_warning">
-						If you delete channel user will be redirected to another active channel automatically.
+						<div className="modal_delete_channel_holder">
+							<div className="modal_delete_channel_question">Delete channel?</div><br/>
+							<div className="modal_delete_channel_question modal_delete_channel_name ">'{channelName}'</div>
+							<div className="modal_delete_line_holder">
+								<div className="edit_channel_line modal_delete_channel_line">
+									&nbsp;
+								</div>
+							</div>
+							<div className="modal_delete_channel_warning">
+							If you delete channel user will be redirected to another active channel automatically.
+							</div>
+							<div className="modal_delete_button_holder"><button className="modal_delete_back" onClick={() => this.setState({isModalOpened:false})}>Back</button><button className="modal_delete_confirm"  onClick={()=>this.props.removeChannel(this.props.key)}>Delete</button></div>
 						</div>
-						<div className="modal_delete_button_holder"><button className="modal_delete_back" onClick={() => this.setState({isModalOpened:false})}>Back</button><button className="modal_delete_confirm"  onClick={()=>this.props.removeChannel(this.props.key)}>Delete</button></div>
 				   </Modal>    
 					<div className="channel_section channel_name_section">
 						<div className="channel_section_channel_live_status ">

@@ -9,7 +9,7 @@ class HomeScreen extends Component{
 		if(Object.keys(this.props.channels).length === 0){
 			return <div className="HomeScreen-noStreams">
 				<div className="animated_logo">
-				<p className="logo">vibe</p>
+				
 					<div className="topContainer">
 						<p className="no_active_channels_p">You have no active channels</p>
 						<Link to="/createChannel"><button className="btnAddChannel" onClick={()=>{}}>Add channel</button></Link>	
