@@ -5,7 +5,6 @@ import dot_16px_blue from "../imgs/radius-16-px-blue.svg";
 import dot_16px_purple from "../imgs/radius-16-px-purple.svg"; 
 import VolumeController from "./VolumeController";
 import Modal from 'react-modal';
-import styled, { keyframes } from "styled-components";
 
 const customStyles = {
     content : {
@@ -20,22 +19,8 @@ const customStyles = {
 	}, 
 	overlay : {
 		backgroundColor: 'rgba(0,0,0,0.6)',
-		animation: "${animation}",
-		animationDuration: "1s"
 	}
   };
-  const animation = keyframes`
-  from {
-   backgroundColor:rgba(0,0,0,1);
-  }
-
-  to {
-    backgroundColor:rgba(0,0,0,0.6);
-  }
-`;
-  /*
-  Modal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,0.6)';
-*/
 
 
 class Channel extends Component{
@@ -92,7 +77,7 @@ class Channel extends Component{
 							<img alt="" className="dot_16_px" src={icon}/> <span className="light">LIVE</span> <span className="bold">{time}</span>
 							</div>
 							<p className="channelName">{channelName}</p>
-							<p className="channelName">w/ {withCorp}</p>
+							<p className="channelName channel_dj">w/ {withCorp}</p>
 							<p className="channel_genre">{genre}</p>
 					</div>
 					<div className="channel_section channel_listeners_section">
@@ -101,6 +86,7 @@ class Channel extends Component{
 							<div className="channel_section_numberOfListeners_text">{listeners||0}</div>
 						</div>
 					</div>
+					
 					<div className="channel_section channel_audio_section">
 						<p className="s">Audio source</p>
 						<p className="channel_audio_audio_source_value">{source}</p>
@@ -109,6 +95,7 @@ class Channel extends Component{
 							<VolumeController volume={this.state.volume} setVolume={value => this.setVolume(value)}/>
 						</div>
 					</div>
+
 					<div className="channel_section channel_settings_section">
 						<div className={`channel_settings ${this.state.playing?" play":""}`} onClick={()=>this.setState({playing:!this.state.playing})}> </div>
 						<div className="channel_settings_editBtn">Edit</div>
@@ -126,4 +113,7 @@ export default Channel;
 /*
 	-> prilis vela veci -> skusit to zjednodusit
 	-> mozno vyhodit ten modal do niecoho samostatneho a urobit ho reusable? 
+
+	-> boa prerobiť uplne cele
+	
 */

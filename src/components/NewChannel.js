@@ -89,6 +89,12 @@ class NewChannel extends Component{
         });
         navigate("/");
     }
+    validateSongName(songName){
+        //48 chars
+    }
+    validateDjName(djName){
+        //20 chars
+    }
     render(){
         return (
             <div className="animated_logo top center">

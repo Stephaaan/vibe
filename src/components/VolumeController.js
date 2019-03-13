@@ -18,12 +18,14 @@ class VolumeController extends Component{
     render(){
 
         var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        let volume = this.props.volume - 10;
+        volume = volume > 10? "+"+volume:volume;
         return(
-            
+
             <div className="volume_controller_handler">
                 {array.map(i=><div key={i}className="volume_controller_dot_clickable" onClick={() => this.setVolume(i)}><div key={i} className={this.getClassName(i)}></div></div>)}
                 
-                    <div className="volume_controller_db_label">{this.props.volume - 10}dB</div>
+                    <div className="volume_controller_db_label">{volume}dB</div>
             </div>
             
         );

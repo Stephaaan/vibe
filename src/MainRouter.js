@@ -7,7 +7,7 @@ class Application extends Component{
     render(){
         return(
             <Router>
-                <HomeScreen channels={this.props.channels} removeChannel={this.props.removeChannel} path="/"/>
+                <HomeScreen addChannel={this.props.addChannel} channels={this.props.channels} removeChannel={this.props.removeChannel} path="/"/>
                 <NewChannel addChannel={this.props.addChannel} path="/createChannel"/>
             </Router>
         );
