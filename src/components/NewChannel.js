@@ -7,6 +7,8 @@ import Modal from 'react-modal';
 
 import DebugNewChannel from "./debug/DebugNewChannel";
 
+import Phone from "../imgs/phone-and-headphones.svg";
+
 const customStyles = {
     content : {
       width:"500px",
@@ -110,6 +112,16 @@ class NewChannel extends Component{
                     </div>
                     <ChannelFormOnline state={this.state}/> {/* alebo potom channelFormOffline podla statu checked*/}
                 </div>
+                 {/*preview div*/}
+                <div className="edit_channel_preview">
+                    <div className="edit_channel_handler">
+                        <p className="edit_channel_preview_text">Preview</p>
+                        <div className="edit_channel_phone"></div>
+                        <div className="saveButton" onClick={()=>{this.createChannel()}}>
+                                Go live
+                            </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -117,7 +129,9 @@ class NewChannel extends Component{
     }  
 }
 
-
+/* 
+    PROBLEM -> všetky formy nefunkčne lebo už nesu viazane na state v NewChannel
+*/
 const ChannelFormOnline = props => <>
     <>
         <p className="edit_channel_channel_name_tag">Channel Name*</p>
@@ -154,11 +168,16 @@ const ChannelFormOnline = props => <>
                 <option>skuska</option>
                 <option>skuska2</option>
             </select>
+            <div className="edit_channel_audio_select_warning">System will use audio device system settings</div>
             <div className="edit_channel_volume_control">
-            <div>Channel volume</div>
+            <div className="edit_name_channel_volume_label">Channel volume</div>
             <VolumeController volume={props.state.volume} setVolume={(volume) => ""}/>
         </div>
+        <Link className="linkWidth" to="/"><div className="backButton">
+            Back
+        </div></Link>
     </div>
+    
 </>
 export default NewChannel;
 /* 

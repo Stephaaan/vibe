@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="603" viewBox="0 0 403 724">
+    <defs>
+        <radialGradient id="a" r="1060.938%" fx="50%" fy="50%" gradientTransform="matrix(-.09434 0 0 -.09033 .547 .545)">
+            <stop offset="0%" stop-color="#FBFCFD"/>
+            <stop offset="31.878%" stop-color="#FFF"/>
+            <stop offset="100%"/>
+        </radialGradient>
+        <linearGradient id="b" x1="50%" x2="50%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#E0E2E3" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#DADDDF"/>
+        </linearGradient>
+        <linearGradient id="d" x1="50%" x2="50%" y1="50%" y2="72.262%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+        <circle id="c" cx="159.5" cy="595.5" r="20.5"/>
+        <filter id="e" width="104.9%" height="104.9%" x="-2.4%" y="-2.4%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0"/>
+        </filter>
+        <linearGradient id="h" x1="50%" x2="50%" y1="50%" y2="100%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FAFBFC"/>
+        </linearGradient>
+        <path id="g" d="M45.36 0h226.28c23.907 0 43.288 19.38 43.288 43.288v94.016l2.072 4.13v40.262l-2.072 3.097v409.92c0 23.906-19.38 43.287-43.288 43.287H45.36c-23.907 0-43.288-19.38-43.288-43.288V239.508L0 235.378V192.02l2.072-3.097v-3.097L0 182.728v-43.36l2.072-4.129V43.288C2.072 19.38 21.452 0 45.36 0z"/>
+        <filter id="f" width="145.4%" height="122.6%" x="-22.7%" y="-8.9%" filterUnits="objectBoundingBox">
+            <feOffset dy="15" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="21.5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+            <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter2"/>
+            <feGaussianBlur in="shadowOffsetOuter2" result="shadowBlurOuter2" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter2" result="shadowMatrixOuter2" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="shadowMatrixOuter2"/>
+            </feMerge>
+        </filter>
+        <filter id="i" width="133.1%" height="116.5%" x="-16.6%" y="-5.9%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="7"/>
+            <feOffset dy="-5" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.13 0"/>
+        </filter>
+        <radialGradient id="j" r="100%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#FBFCFD"/>
+            <stop offset="31.878%" stop-color="#FFF"/>
+            <stop offset="100%"/>
+        </radialGradient>
+        <radialGradient id="k" r="77.017%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#FBFCFD"/>
+            <stop offset="31.878%" stop-color="#FFF"/>
+            <stop offset="100%"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(43 28)">
+        <rect width="53" height="5" x="131" y="44" fill="url(#a)" fill-opacity=".2" rx="2.5"/>
+        <g opacity=".5">
+            <use fill="url(#b)" xlink:href="#c"/>
+            <use fill="url(#d)" fill-opacity=".3" style="mix-blend-mode:screen" xlink:href="#c"/>
+            <use fill="#000" filter="url(#e)" xlink:href="#c"/>
+        </g>
+        <use fill="#000" filter="url(#f)" xlink:href="#g"/>
+        <use fill="url(#h)" xlink:href="#g"/>
+        <use fill="#000" filter="url(#i)" xlink:href="#g"/>
+        <circle cx="159.5" cy="597.5" r="23.5" fill="url(#j)" fill-opacity=".2"/>
+        <circle cx="119.5" cy="46.5" r="2.5" fill="url(#k)" fill-opacity=".2"/>
+    </g>
+</svg>
