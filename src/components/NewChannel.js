@@ -5,6 +5,8 @@ import VolumeController from "./VolumeController";
 import { Link, navigate} from "@reach/router"
 import Modal from 'react-modal';
 
+import DebugNewChannel from "./debug/DebugNewChannel";
+
 const customStyles = {
     content : {
       width:"500px",
@@ -18,7 +20,7 @@ class NewChannel extends Component{
     state = {
         name:"",
         checked:2,
-        fileName:"Choose a file",
+        fileName:"Select from your computer",
         colorPicked:1,
         volume:15,
         modalIsOpen:false
@@ -34,7 +36,7 @@ class NewChannel extends Component{
         this.setState({fileName:prepared});
     }
     deleteFileSelection(){
-        this.setState({fileName:"Choose a file"});
+        this.setState({fileName:"Select from your computer"});
     }
     handleColorChoose(id) {
         this.setState({colorPicked:id});
@@ -52,7 +54,7 @@ class NewChannel extends Component{
             console.log("genre");
             return;
         }
-        if(this.state.fileName === "Choose a file"){
+        if(this.state.fileName === "Select from your computer"){
             console.log("file");
             return;
         }
@@ -96,16 +98,97 @@ class NewChannel extends Component{
         //20 chars
     }
     render(){
-        return (
+       return (
+        <div className="animated_logo top center">
+        { <DebugNewChannel/> }
+            <div className="edit_channel_screen_edit_channel">
+                <div className="edit_channel_edit_form">
+                    <p className="edit_channel_new_channel_p">New Channel</p>
+                    <div className="edit_channel_line"></div>
+                    <div className="edit_channel_radioButtons">
+                        <RadioButtonHandler setCheckedID={(id)=>this.setState({checked:id})}buttons={([{id:1, text:"Live input channel", checked:false},{id:2, text:"Offline selection channel", checked:true}])}/>
+                    </div>
+                    <ChannelFormOnline state={this.state}/> {/* alebo potom channelFormOffline podla statu checked*/}
+                </div>
+            </div>
+        </div>
+
+       ); 
+    }  
+}
+
+
+const ChannelFormOnline = props => <>
+    <>
+        <p className="edit_channel_channel_name_tag">Channel Name*</p>
+        <input type="text" onChange={() => ""} className="new_channel_text_input new_channel_name" placeholder="Insert channel name"/>
+        <p className="edit_channel_channel_name_warning">i  Maximum 48 characters</p>
+    </>
+    <>
+        <p className="edit_channel_channel_dj_tag">Dj name*</p>
+        <input type="text" onChange={e => this.setState({dj:e.target.value})} className="new_channel_text_input new_channel_dj" placeholder="Insert dj name"/>
+        <p className="edit_channel_channel_dj_warning">i Maximum 20 characters</p>                
+    </>
+    <>
+        <p className="edit_channel_channel_genre_tag">Generes*</p>
+        <input type="text" onChange={e => this.setState({genre:e.target.value})} className="new_channel_text_input new_channel_genre"/>
+        <p className="edit_channel_channel_genre_warning">i Maximum 50 characters</p>                        
+    </>
+    <>
+        <p className="edit_channel_channel_file_tag">Upload Channel cover picture*</p>
+        <input type="file" name="file" id="file" className="inputfile" onChange = {e => 
+            this.handleFileUpload(e.target.files[0].name)
+        }/>
+        <div className="edit_channel_cover_file">
+            <label htmlFor="file" >{props.state.fileName}</label>{props.state.fileName !== "Select from your computer"?<span className="file_delete" onClick={()=>this.deleteFileSelection()}>&nbsp;</span>:""}
+        </div>
+        <div className="edit_channel_format_warning">i Minimal picture size is 1624 x 750 px</div>
+    </>
+    <>
+        <div className="edit_channel_color">Channel color theme*</div>
+        <ColorChooser choose={id => this.handleColorChoose(id)}/>
+    </>
+    <div className="edit_channel_source_control_handler">
+        <div className="edit_channel_color">Audio source*</div>
+            <select onChange={e=>""} className="edit_channel_source_select">
+                <option>skuska</option>
+                <option>skuska2</option>
+            </select>
+            <div className="edit_channel_volume_control">
+            <div>Channel volume</div>
+            <VolumeController volume={props.state.volume} setVolume={(volume) => ""}/>
+        </div>
+    </div>
+</>
+export default NewChannel;
+/* 
+    //TODO: simplify... 
+    //TODO: prerobit ->  
+    tento komponent -> 
+        vybratie online/offline channelu
+        + zobrazenie komponentu -> onlinechannelform/offlinechannelform... -> tie komponenty by posielali data automaticky sem a ostatok by bol ako je teraz
+
+    //cely system s file je retardovany
+*/
+
+/* 
+    OLD CODE 
+
+
+    return (
             <div className="animated_logo top center">
+
+            
+            {<DebugNewChannel/>}
                 <Modal
                    
                     isOpen={this.state.modalIsOpen}
                     contentLabel="Example Modal"
                     style={customStyles}
                     ></Modal>    
+                    <p className="logo logo_newChannel">vibe</p>
                     <div className="edit_channel_screen_edit_channel">
-                        {/*edit channel div*/}
+                        {/*edit channel div}
                         <div className="edit_channel_edit_form">
                             <p className="edit_channel_new_channel_p">New Channel</p>
                             <div className="edit_channel_line">
@@ -144,7 +227,7 @@ class NewChannel extends Component{
                                 </div>
                             </div>
                         </div>
-                        {/*preview div*/}
+                        {/*preview div}
                         <div className="edit_channel_preview">
                             <div className="edit_channel_handler">
                                 <p className="edit_channel_preview_text">Preview</p>
@@ -161,15 +244,4 @@ class NewChannel extends Component{
                     </div> 
                 </div>
         )
-    }  
-}
-export default NewChannel;
-/* 
-    //TODO: simplify... 
-    //TODO: prerobit ->  
-    tento komponent -> 
-        vybratie online/offline channelu
-        + zobrazenie komponentu -> onlinechannelform/offlinechannelform... -> tie komponenty by posielali data automaticky sem a ostatok by bol ako je teraz
-
-    //cely system s file je retardovany
 */

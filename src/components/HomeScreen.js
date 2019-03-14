@@ -25,7 +25,7 @@ class HomeScreen extends Component{
 	render(){
 		if(Object.keys(this.props.channels).length === 0){
 			return <div className="HomeScreen-noStreams">
-			{	<DebugHomeScreenNoCHannels /> }
+			{/*	<DebugHomeScreenNoCHannels />  */}
 				<div className="animated_logo">
 				<p className="logo">vibe</p>
 					<div className="topContainer_noChannels">

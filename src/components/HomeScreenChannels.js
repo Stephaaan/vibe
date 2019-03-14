@@ -13,7 +13,7 @@ class HomeScreen extends Component{
 						TOP
 					*/}
 					<div className="HomeScreen-noStreams">
-				{ <DebugHomeScreenChannels/> }
+				{ /* <DebugHomeScreenChannels/> */ }
 						<div style={{height:"190px"}}>
 							<div className="HomeScreen-stream-topLogo">
 								<div className="topContainer">
