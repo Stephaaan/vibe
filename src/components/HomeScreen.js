@@ -1,29 +1,16 @@
-import React, {Component} from "react";
+import React, {useContext} from "react";
 import {Link} from "@reach/router";
 import "../App.css";
 import path from "../imgs/path-2.svg"
 import HomeScreenChannels from "./HomeScreenChannels";
 import DebugHomeScreenNoCHannels from "./debug/DebugHomeScreenNoChannels";
+import VibeChannelsContext from "../context/VibeChannelsProvider";
 
 
-class HomeScreen extends Component{
-	componentDidMount(){
-		console.log("mount");
-        this.props.addChannel({
-            name:"Sapyenz Night",
-            type:"live",
-            author:"Alyaz",
-            timePlaying:"00:23:45",
-            listeners:"12",
-            audioSource:"Akai EIE1 input 1 & 2",
-			volume:13,
-            color:"blue",
-            genre:"bass, grime, trap"
-        });
-	}
-	// TODO: FIXME
-	render(){
-		if(Object.keys(this.props.channels).length === 0){
+const HomeScreen = props => {
+		const {state, dispatch} = useContext(VibeChannelsContext);
+		console.log(state);
+		if(Object.keys(state).length === 0){
 			return <div className="HomeScreen-noStreams">
 			{/*	<DebugHomeScreenNoCHannels />  */}
 				<div className="animated_logo">
@@ -36,10 +23,8 @@ class HomeScreen extends Component{
 					<img className="pathHomeScreen" src={path} alt=""/>
 				</div>
 			</div>
-		}else{
-			return <HomeScreenChannels removeChannel={this.props.removeChannel} channels={this.props.channels} /> 
 		}
-	}
+		return <HomeScreenChannels channels={state}/> 	
 }
 export default HomeScreen;
 

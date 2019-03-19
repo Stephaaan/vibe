@@ -11,7 +11,6 @@ export const NewChannelFormProvider = ({
         const formReducer = (state = {}, action) => {
             switch (action.type) {
                 case "REGISTER_COMPONENT":
-                console.log("register");
                     const {
                         id,
                         minChars,
@@ -29,18 +28,19 @@ export const NewChannelFormProvider = ({
                     ]
                 case "UPDATE_COMPONENT":
                     const {
-                        idToUpdate,
                         value
                     } = action.payload;
-                    const objectToUpdate = state.find(item => item.idToUpdate === idToUpdate);
+                    const idToUpdate = action.payload.id;
+                    const objectToUpdate = state.find(item => item.id === idToUpdate);
                     return [
-                        ...state.filter(item => item.idToUpdate !== idToUpdate),
+                        ...state.filter(item => item.id !== idToUpdate),
                         {
                             ...objectToUpdate,
                             value,
-                            validated: (value.length >= objectToUpdate.minChars && value.length <= objectToUpdate.minChars ? true : false)
+                            validated:((typeof value === "string")?(value.trim() !== ""?true:false):true)
                         }
                     ]
+                default: return state;
                     }
             }
 
@@ -59,7 +59,6 @@ export default NewChannelFormProviderContext;
 
         /* 
          const object = [
-            {
                 id:1,
                 value:"Sapyenz Night",
                 validated:true,

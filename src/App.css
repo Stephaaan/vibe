@@ -823,3 +823,7 @@ body{
 .edit_channel_dj_form_input_holder{
 	margin-top: 45px;
 }
+.error{
+	border-color: #ea3546;
+	border-width: 2px;
+}

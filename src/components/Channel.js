@@ -1,10 +1,12 @@
-import React, {Component} from "react";
+import React, {useState, useContext} from "react";
 import dot_16px_red from "../imgs/radius-16-px-red.svg"; 
 import dot_16px_green from "../imgs/radius-16-px-green.svg"; 
 import dot_16px_blue from "../imgs/radius-16-px-blue.svg"; 
 import dot_16px_purple from "../imgs/radius-16-px-purple.svg"; 
 import VolumeController from "./VolumeController";
 import Modal from 'react-modal';
+import VibeChannelsContext from "../context/VibeChannelsProvider";
+import { removeChannel } from "../context/contextActions";
 
 const customStyles = {
     content : {
@@ -23,20 +25,11 @@ const customStyles = {
   };
 
 
-class Channel extends Component{
-	state = {
-		playing:true,
-		volume:15,
-		isModalOpened:false
-	}
-	componentDidMount(){
-		this.setState({volume:this.props.volume});
-	}
-	setVolume(value){
-		this.setState({volume:value});
-	}
-	render(){
-		const {color, time, channelName, withCorp, genre, listeners, source} = this.props;
+const Channel = ({ id, color, time, channelName, withCorp, genre, listeners, source, volume:defaultVolume}) => {
+	const [isModalOpened, setModalOpened] = useState(false);
+	const [volume, setVolume] = useState(defaultVolume);	
+	const [playing,setPlaying] = useState(false);
+	const {dispatch} = useContext(VibeChannelsContext);
 		let icon = null
 		switch(color){
 			case "green":
@@ -55,7 +48,7 @@ class Channel extends Component{
 		return(
 			<div className="channel_background">
 					<Modal
-				   		isOpen={this.state.isModalOpened}
+				   		isOpen={isModalOpened}
 				   		contentLabel="Delete channel"
 				   		style={customStyles}>
 						<div className="modal_delete_channel_holder">
@@ -69,7 +62,7 @@ class Channel extends Component{
 							<div className="modal_delete_channel_warning">
 							If you delete channel user will be redirected to another active channel automatically.
 							</div>
-							<div className="modal_delete_button_holder"><button className="modal_delete_back" onClick={() => this.setState({isModalOpened:false})}>Back</button><button className="modal_delete_confirm"  onClick={()=>this.props.removeChannel(this.props.key)}>Delete</button></div>
+							<div className="modal_delete_button_holder"><button className="modal_delete_back" onClick={() =>setModalOpened(false)}>Back</button><button className="modal_delete_confirm"  onClick={()=>dispatch(removeChannel(id))}>Delete</button></div>
 						</div>
 				   </Modal>   
 				   <div className="channel_section channel_name_section">
@@ -91,26 +84,24 @@ class Channel extends Component{
 						<p className="channel_audio_audio_source_value">{source}</p>
 						<div className="channel_audio_volume_handler">
 							<p className="channel_audio_volume_label">Channel Volume</p> <br/>
-							<VolumeController volume={this.state.volume} setVolume={value => this.setVolume(value)}/>
+							<VolumeController volume={volume} setVolume={value => setVolume(value)}/>
 						</div>
 					</div>
 					<div className="channel_section channel_settings_section">
 						<div className="channel_settings_handler">
-							<div className={`channel_settings ${this.state.playing?" play":""}`} onClick={()=>this.setState({playing:!this.state.playing})}> </div>
+							<div className={`channel_settings ${playing?" play":""}`} onClick={()=>setPlaying(!playing)}> </div>
 							<div className="channel_settings_editBtn">Edit</div>
 							<div className="channel_delete" onClick={() => {
-								this.setState({isModalOpened:true})
+								setModalOpened(true);
 							}}></div>
 						</div>
 					</div>
 			</div>
 
 
-
 		); 
 		
 	}
-}
 export default Channel;
 
 

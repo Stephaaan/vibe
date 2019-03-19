@@ -16,3 +16,30 @@ export const updateComponent = (id, value) => {
         }
     }
 }
+/*
+{
+    id,
+    name,
+    type,
+    author,
+    timePlaying,
+    listeners,
+    audioSource,
+    volume,
+    stateOfChannel
+}
+*/
+export const addChannel = payload => {
+    return {
+        type:"ADD_CHANNEL", 
+        payload:{
+            ...payload 
+        }
+    }
+}
+
+export const removeChannel = id => ({
+    type:"REMOVE_CHANNEL",
+    payload:id
+})
+/* nazvy jak ******* ... */
